@@ -19,6 +19,11 @@
 		font-weight: 90;
 		background-color: #f7e6d9;
     	box-shadow: 0 0 0 2px #DEB8A0;
+		transition: all .5s ease;
+		align: top;
+	}
+	img{
+		align: middle;
 	}
 </style>
 
@@ -26,7 +31,10 @@
 	<h1> University Housing Portal </h1>
 </header>
 
+
 <body>
+
+<img src="pic1.png.jpeg" height = "300" width = "300">
 <tr>
 		<th><a href="stafflogin.php"><button>Staff Login</button></a></th>
 		<th><a href="studentlogin.php"><button>Student Login</button></a></th>
