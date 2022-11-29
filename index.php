@@ -39,7 +39,7 @@
 
 <body>
 <h2> WELCOME! <h2>
-<h3>This is a university housing database system. If you are a student, please use your university student account information to login.<h3>
+<h3>This is a university housing database system. If you are a student, please use your universitystudent account information to login.<h3>
 <h4>If you have not received it yet, you may not login to the Student Housing Portal.<h4>
 
 <img src="pic1.png.jpeg" height = "300" width = "300" style="margin: 10px 10px 10px 10px;">

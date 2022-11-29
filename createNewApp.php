@@ -7,6 +7,8 @@
 		padding-top: 120px;
 	}
 	header{
+        margin-top: -180;
+  		padding: -50px;
         text-align: center;
 		font-size: 50px;
 		font-weight: 50;
