@@ -32,7 +32,7 @@
    Student ID: <input type="text" name="studentID" required><br><br>
    Password: <input type="password" name="Password" required><br><br>
    <input type="submit" value="Submit" />
-   <input type="button" name = "Cancel" value="Cancel" onClick = "window.location='../index.php';"/>
+   <input type="button" name = "Cancel" value="Cancel" onClick = "window.location='./index.php';"/>
 </form>
 <tr>
 		<th><a href="studentloginpg.php"><button>Submit</button></a></th>
