@@ -29,10 +29,11 @@
 <body>
 	<form action="stafflogin.php" method="post">
 	Type "A for Admin login, or type "M" for Mental Health Advisor: <input type="text" name="identifyerID" required><br><br>
-   	Employee ID: <input type="text" name="employeeID" required><br><br>
-   	Password: <input type="password" name="Password" required><br><br>
-   <input type="submit" value="Submit" />
-   <input type="button" name = "Cancel" value="Cancel" onClick = "window.location='./index.php';"/>
-</form>
+	Employee ID: <input type="text" name="employeeID" required><br><br>
+	Password: <input type="password" name="Password" required><br><br>
+	<input type="button" name = "Login As Mental Health Advisor" value="Login As Mental Health Advisor" /> 
+	<input type="button" name = "Login As Administrator" value= "Login As Administrator"/>
+	<input type="button" name = "Cancel" value="Cancel" onClick = "window.location='./index.php';"/>
+	</form>
 </body>
 </html>
