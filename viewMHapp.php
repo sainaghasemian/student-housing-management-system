@@ -26,17 +26,13 @@
 	}
 </style>
 <header>
-	<h1>Welcome New or Returning Student!</h1>
+	<h1>Book Mental Health Appointment</h1>
 </header>
-<img src="wave-hand.gif" height = "200" width = "200" style="margin: 0px 0px 30px 0px;">
 <body>
 	<table style="vertical-align: bottom; margin-left: auto; margin-right: auto;">
-		<tr>
-			<th><a href="viewHousingApps.php"><button>Housing Applications</button></a><br></th>
-			<th><a href="roomatefinder.php"><button>Roomate Finder</button></a><br></th>
-			<th><a href="viewMHapp.php"><button>View/Book Mental Health Appointment</button></a><br></th>
+    <tr>
+			<th><a href="bookMHapp.php"><button>Book A Mental Health Appointment</button></a><br></th>
 		</tr><br>
 	</table>
-
 </body>
 </html>
