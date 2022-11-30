@@ -161,19 +161,37 @@ INSERT INTO `Parking Lots` (`LotNumber`, `Number_of_Spots`, `Building_Name`) VAL
 INSERT INTO `Parking Spots` (`Spot_Number`, `Lot_Number`) VALUES ('1', '28');
 INSERT INTO `Parking Spots` (`Spot_Number`, `Lot_Number`) VALUES ('2', '28');
 INSERT INTO `Parking Spots` (`Spot_Number`, `Lot_Number`) VALUES ('3', '28');
-INSERT INTO `Parking Spots` (`Spot_Number`, `Lot_Number`) VALUES ('4', '28');
 INSERT INTO `Parking Spots` (`Spot_Number`, `Lot_Number`) VALUES ('1', '13');
 INSERT INTO `Parking Spots` (`Spot_Number`, `Lot_Number`) VALUES ('2', '13');
 INSERT INTO `Parking Spots` (`Spot_Number`, `Lot_Number`) VALUES ('3', '13');
-INSERT INTO `Parking Spots` (`Spot_Number`, `Lot_Number`) VALUES ('4', '13');
 INSERT INTO `Parking Spots` (`Spot_Number`, `Lot_Number`) VALUES ('1', '9');
 INSERT INTO `Parking Spots` (`Spot_Number`, `Lot_Number`) VALUES ('2', '9');
 INSERT INTO `Parking Spots` (`Spot_Number`, `Lot_Number`) VALUES ('3', '9');
-INSERT INTO `Parking Spots` (`Spot_Number`, `Lot_Number`) VALUES ('4', '9');
 INSERT INTO `Parking Spots` (`Spot_Number`, `Lot_Number`) VALUES ('1', '12');
 INSERT INTO `Parking Spots` (`Spot_Number`, `Lot_Number`) VALUES ('2', '12');
 INSERT INTO `Parking Spots` (`Spot_Number`, `Lot_Number`) VALUES ('3', '12');
-INSERT INTO `Parking Spots` (`Spot_Number`, `Lot_Number`) VALUES ('4', '12');
+
+
+INSERT INTO `Buildings` (`Building_Name`, `StreetName`, `Postal_Code`, `Number_of_Rooms`, `Advisor_ID`)
+VALUES ('Glacier Hall', '24th Avenue', 't2n4v5', '75', '77733322');
+INSERT INTO `Buildings` (`Building_Name`, `StreetName`, `Postal_Code`, `Number_of_Rooms`, `Advisor_ID`)
+VALUES ('Cascade Hall', '24th Avenue', 't2n4v5', '155', '00013084');
+
+INSERT INTO `Building Amenities` (`Building_Name`, `Amenity_Name`) VALUES (`Glacier Hall`, `24 Hour Gym`);
+INSERT INTO `Building Amenities` (`Building_Name`, `Amenity_Name`) VALUES (`Glacier Hall`, `Hot Tub`);
+INSERT INTO `Building Amenities` (`Building_Name`, `Amenity_Name`) VALUES (`Glacier Hall`, `Laundry Room`);
+INSERT INTO `Building Amenities` (`Building_Name`, `Amenity_Name`) VALUES (`Cascade Hall`, `Laundry Room`);
+INSERT INTO `Building Amenities` (`Building_Name`, `Amenity_Name`) VALUES (`Cascade Hall`, `Coffee Bar`);
+INSERT INTO `Building Amenities` (`Building_Name`, `Amenity_Name`) VALUES (`Cascade Hall`, `Bike Locking System`);
+
+INSERT INTO `Rooms` (`Room#`, `Building_Name`, `Rent_per_sem`, `#bathrooms`, `#bedrooms`) VALUES ('100', 'Cascade Hall', '9015', '2', '2');
+INSERT INTO `Rooms` (`Room#`, `Building_Name`, `Rent_per_sem`, `#bathrooms`, `#bedrooms`) VALUES ('101', 'Glacier Hall', '10000', '1', '1');
+INSERT INTO `Rooms` (`Room#`, `Building_Name`, `Rent_per_sem`, `#bathrooms`, `#bedrooms`) VALUES ('103', 'Cascade Hall', '10000', '1', '1');
+INSERT INTO `Rooms` (`Room#`, `Building_Name`, `Rent_per_sem`, `#bathrooms`, `#bedrooms`) VALUES ('100', 'Glacier Hall', '9015', '2', '2');
+INSERT INTO `Rooms` (`Room#`, `Building_Name`, `Rent_per_sem`, `#bathrooms`, `#bedrooms`) VALUES ('103', 'Glacier Hall', '8575', '2', '4');
+INSERT INTO `Rooms` (`Room#`, `Building_Name`, `Rent_per_sem`, `#bathrooms`, `#bedrooms`) VALUES ('104', 'Glacier Hall', '8700', '1', '2');
+INSERT INTO `Rooms` (`Room#`, `Building_Name`, `Rent_per_sem`, `#bathrooms`, `#bedrooms`) VALUES ('101', 'Cascade Hall', '8575', '2', '4');
+INSERT INTO `Rooms` (`Room#`, `Building_Name`, `Rent_per_sem`, `#bathrooms`, `#bedrooms`) VALUES ('102', 'Cascade Hall', '8700', '1', '2');
 
 #
 # Dumping data for table users
