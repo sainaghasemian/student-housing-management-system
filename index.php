@@ -9,7 +9,7 @@
 		color: #C5A586;
 	}
 	header{
-		margin-top: -180;
+		margin-top: -120;
   		padding: -50px;
 		font-size: 50px;
 		font-weight: 50;
