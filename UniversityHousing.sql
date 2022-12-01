@@ -76,7 +76,7 @@ CREATE TABLE `Applications` (
   `Building_Name` VARCHAR(30) NULL,
   PRIMARY KEY (`StudentID`),
   FOREIGN KEY (`Building_Name`) REFERENCES `Rooms`(`Building_Name`),
-  FOREIGN KEY (`Room#`) REFERENCES `Rooms`(`Room#`),\
+  FOREIGN KEY (`Room#`) REFERENCES `Rooms`(`Room#`)
 );
 
 DROP TABLE IF EXISTS `Parking Lots`;
