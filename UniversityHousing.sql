@@ -59,6 +59,18 @@ CREATE TABLE `Mental Health Advisors` (
   FOREIGN KEY (`Building_Name`) REFERENCES `Buildings`(`Building_Name`)
 );
 
+DROP TABLE IF EXISTS `Appointments`;
+CREATE TABLE `Appointments` (
+  `Advisor_ID` VARCHAR(8) NOT NULL,
+  `Appointment_ID` INT NOT NULL AUTO_INCREMENT,
+  `Date` VARCHAR(10) NOT NULL,
+  `Time` VARCHAR(17) NOT NULL,
+  `Student_ID` VARCHAR(8) NULL,
+  PRIMARY KEY (`Appointment_ID`),
+  FOREIGN KEY (`Advisor_ID`) REFERENCES `Mental Health Advisors`(`EmployeeID`),
+  FOREIGN KEY (`Student_ID`) REFERENCES `Students`(`ID`)
+);
+
 DROP TABLE IF EXISTS `Applications`;
 CREATE TABLE `Applications` (
   `StudentID` VARCHAR(8) NOT NULL,
@@ -72,11 +84,7 @@ CREATE TABLE `Applications` (
   `Minit` VARCHAR(1) NOT NULL,
   `Lname` VARCHAR(20) NOT NULL,
   `Status` VARCHAR(30) NOT NULL,
-  `Room#` VARCHAR(4) NULL,
-  `Building_Name` VARCHAR(30) NULL,
-  PRIMARY KEY (`StudentID`),
-  FOREIGN KEY (`Building_Name`) REFERENCES `Rooms`(`Building_Name`),
-  FOREIGN KEY (`Room#`) REFERENCES `Rooms`(`Room#`)
+  PRIMARY KEY (`StudentID`)
 );
 
 DROP TABLE IF EXISTS `Parking Lots`;
@@ -85,7 +93,7 @@ CREATE TABLE `Parking Lots` (
   `Number_of_Spots` INT NOT NULL,
   `Building_Name` VARCHAR(30) NOT NULL,
   PRIMARY KEY (`LotNumber`),
-  FOREIGN KEY (`Building_Name`) REFERENCES `Rooms`(`Building_Name`)
+  FOREIGN KEY (`Building_Name`) REFERENCES `Buildings`(`Building_Name`)
 );
 
 DROP TABLE IF EXISTS `Parking Spots`;
@@ -94,11 +102,6 @@ CREATE TABLE `Parking Spots` (
   `Lot_Number` INT NOT NULL,
   PRIMARY KEY (`Spot_Number`, `Lot_Number`)
 );
-
-INSERT INTO `Parking Spots` (`Spot_Number`, `Lot_Number`) VALUES ('1', '28');
-INSERT INTO `Parking Spots` (`Spot_Number`, `Lot_Number`) VALUES ('2', '28');
-INSERT INTO `Parking Spots` (`Spot_Number`, `Lot_Number`) VALUES ('3', '28');
-INSERT INTO `Parking Spots` (`Spot_Number`, `Lot_Number`) VALUES ('4', '28');
 
 DROP TABLE IF EXISTS `Parks In`;
 CREATE TABLE `Parks In` (
@@ -135,8 +138,18 @@ CREATE TABLE `Rooms` (
   PRIMARY KEY (`Room#`, `Building_Name`)
 );
 
-INSERT INTO `Application` (`StudentID`, `Year_of_Study`, `Postal_Code`, `Province`, `Country`, `StreetName`, `City`, `Fname`, `Minit`, `Lname`, `Status`, `Room#`, `Building_Name`) 
-VALUES ('30127869', '3', 'h5u7h3', 'AB', 'Canada', 'Centre Street', 'Calgary', 'Isaiah', 'M', 'Lemieux', 'Submitted Pending Approval', null, null);
+DROP TABLE IF EXISTS `Lives In`;
+CREATE TABLE `Lives In` (
+  `StudentID` VARCHAR(8) NOT NULL,
+  `Room#` VARCHAR(4) NOT NULL,
+  `Building_Name` VARCHAR(30) NOT NULL,
+  FOREIGN KEY (`StudentID`) REFERENCES `Students`(`ID`),
+  FOREIGN KEY (`Building_Name`) REFERENCES `Buildings`(`Building_Name`),
+  FOREIGN KEY (`Room#`) REFERENCES `Rooms`(`Room#`)
+);
+
+INSERT INTO `Applications` (`StudentID`, `Year_of_Study`, `Postal_Code`, `Province`, `Country`, `StreetName`, `City`, `Fname`, `Minit`, `Lname`, `Status`) 
+VALUES ('30127869', '3', 'h5u7h3', 'AB', 'Canada', 'Centre Street', 'Calgary', 'Isaiah', 'M', 'Lemieux', 'Submitted Pending Approval');
 
 INSERT INTO `Students` (`ID`, `Password`) VALUES ('30127869', 'password1');
 INSERT INTO `Students` (`ID`, `Password`) VALUES ('30113011', 'cpsc471');
@@ -152,6 +165,15 @@ INSERT INTO `Mental Health Advisors` (`EmployeeID`, `Password`, `StreetName`, `C
 VALUES ('77733322', '*blue_sky', 'Southland Drive', 'Calgary', 'AB', 't2j9a5', 'Stacy', 'Hart', 'Glacier Hall');
 INSERT INTO `Mental Health Advisors` (`EmployeeID`, `Password`, `StreetName`, `City`, `Province`, `PostalCode`, `Fname`, `Lname`, `Building_Name`)
 VALUES ('00013084', 'checkers2022', 'Banff Trail', 'Calgary', 'AB', 't0b9d6', 'Jerome', 'McGrovven', 'Cascade Hall');
+
+INSERT INTO `Appointments` (`Advisor_ID`, `Date`, `Time`) VALUES ('77733322', '15/12/2022', '10:00AM - 11:00AM');
+INSERT INTO `Appointments` (`Advisor_ID`, `Date`, `Time`) VALUES ('77733322', '15/12/2022', '12:00PM - 1:00PM');
+INSERT INTO `Appointments` (`Advisor_ID`, `Date`, `Time`) VALUES ('77733322', '16/12/2022', '9:00AM - 10:00AM');
+INSERT INTO `Appointments` (`Advisor_ID`, `Date`, `Time`) VALUES ('77733322', '16/12/2022', '10:00AM - 11:00AM');
+INSERT INTO `Appointments` (`Advisor_ID`, `Date`, `Time`) VALUES ('00013084', '17/12/2022', '2:00PM - 3:00PM');
+INSERT INTO `Appointments` (`Advisor_ID`, `Date`, `Time`) VALUES ('00013084', '17/12/2022', '3:00PM - 4:00PM');
+INSERT INTO `Appointments` (`Advisor_ID`, `Date`, `Time`) VALUES ('00013084', '19/12/2022', '10:00AM - 11:00AM');
+INSERT INTO `Appointments` (`Advisor_ID`, `Date`, `Time`) VALUES ('00013084', '19/12/2022', '12:00PM - 1:00PM');
 
 INSERT INTO `Parking Lots` (`LotNumber`, `Number_of_Spots`, `Building_Name`) VALUES ('28', '135', 'Glacier Hall');
 INSERT INTO `Parking Lots` (`LotNumber`, `Number_of_Spots`, `Building_Name`) VALUES ('13', '25', 'Glacier Hall');
@@ -177,12 +199,12 @@ VALUES ('Glacier Hall', '24th Avenue', 't2n4v5', '75', '77733322');
 INSERT INTO `Buildings` (`Building_Name`, `StreetName`, `Postal_Code`, `Number_of_Rooms`, `Advisor_ID`)
 VALUES ('Cascade Hall', '24th Avenue', 't2n4v5', '155', '00013084');
 
-INSERT INTO `Building Amenities` (`Building_Name`, `Amenity_Name`) VALUES (`Glacier Hall`, `24 Hour Gym`);
-INSERT INTO `Building Amenities` (`Building_Name`, `Amenity_Name`) VALUES (`Glacier Hall`, `Hot Tub`);
-INSERT INTO `Building Amenities` (`Building_Name`, `Amenity_Name`) VALUES (`Glacier Hall`, `Laundry Room`);
-INSERT INTO `Building Amenities` (`Building_Name`, `Amenity_Name`) VALUES (`Cascade Hall`, `Laundry Room`);
-INSERT INTO `Building Amenities` (`Building_Name`, `Amenity_Name`) VALUES (`Cascade Hall`, `Coffee Bar`);
-INSERT INTO `Building Amenities` (`Building_Name`, `Amenity_Name`) VALUES (`Cascade Hall`, `Bike Locking System`);
+INSERT INTO `Building Amenities` (`Building_Name`, `Amenity_Name`) VALUES ('Glacier Hall', '24 Hour Gym');
+INSERT INTO `Building Amenities` (`Building_Name`, `Amenity_Name`) VALUES ('Glacier Hall', 'Hot Tub');
+INSERT INTO `Building Amenities` (`Building_Name`, `Amenity_Name`) VALUES ('Glacier Hall', 'Laundry Room');
+INSERT INTO `Building Amenities` (`Building_Name`, `Amenity_Name`) VALUES ('Cascade Hall', 'Laundry Room');
+INSERT INTO `Building Amenities` (`Building_Name`, `Amenity_Name`) VALUES ('Cascade Hall', 'Coffee Bar');
+INSERT INTO `Building Amenities` (`Building_Name`, `Amenity_Name`) VALUES ('Cascade Hall', 'Bike Locking System');
 
 INSERT INTO `Rooms` (`Room#`, `Building_Name`, `Rent_per_sem`, `#bathrooms`, `#bedrooms`) VALUES ('100', 'Cascade Hall', '9015', '2', '2');
 INSERT INTO `Rooms` (`Room#`, `Building_Name`, `Rent_per_sem`, `#bathrooms`, `#bedrooms`) VALUES ('101', 'Glacier Hall', '10000', '1', '1');
@@ -193,13 +215,7 @@ INSERT INTO `Rooms` (`Room#`, `Building_Name`, `Rent_per_sem`, `#bathrooms`, `#b
 INSERT INTO `Rooms` (`Room#`, `Building_Name`, `Rent_per_sem`, `#bathrooms`, `#bedrooms`) VALUES ('101', 'Cascade Hall', '8575', '2', '4');
 INSERT INTO `Rooms` (`Room#`, `Building_Name`, `Rent_per_sem`, `#bathrooms`, `#bedrooms`) VALUES ('102', 'Cascade Hall', '8700', '1', '2');
 
-#
-# Dumping data for table users
-#
 
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
