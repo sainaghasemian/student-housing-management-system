@@ -18,7 +18,8 @@ if(mysqli_num_rows($result) == 1)
     $_SESSION['Submit'] = 'true';
     header("Location: studentloginpg.php");
 }
-else{
+else
+{
     header("Location: studentlogin.php");
     
 }
