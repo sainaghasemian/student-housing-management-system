@@ -1,11 +1,10 @@
 <?php
 include 'databaseConnect.php';
 
-if (mysqli_connect_errno($conn))
-  {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
-
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+  
 
 $user_ID = $_POST['studentID'];
 $password = $_POST['Password'];
@@ -15,12 +14,13 @@ $result = mysqli_query($conn, $sql);
 if(mysqli_num_rows($result) == 1)
 {
     $_SESSION["studentID"] = $user_ID;
+    $_SESSION["Password"] = $password;
     $_SESSION['Submit'] = 'true';
     header("Location: studentloginpg.php");
-
 }
 else{
-    header("Location: index.php");
+    header("Location: studentlogin.php");
+    
 }
 
 mysqli_close($conn);
