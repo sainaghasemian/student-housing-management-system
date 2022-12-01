@@ -13,6 +13,14 @@
 		color: transparent;
 		background-clip: text;
 		-webkit-background-clip: text;
+	}
+    button{
+		font-size: 30px;
+		font-weight: 90;
+		background-color: #f7e6d9;
+    	box-shadow: 0 0 0 2px #DEB8A0;
+		transition: all .9s ease;
+		align: top;
 	}	
 	input{
 		font-size: 23px;
@@ -24,16 +32,14 @@
 	}
 </style>
 <header>
-	<h1> Staff Login</h1>
+	<h1> Administrator Main Page</h1>
 </header>
 <body>
-	<form action="staff-login.php" method="post">
-	Employee ID: <input type="text" name="employeeID" required><br><br>
-	Password: <input type="password" name="Password" required><br><br>
-	<input type="submit" value = "Login As Mental Health Advisor" /> 
-	<input type="submit" value = "Login As Administrator" />
-	<input type="button" name = "Cancel" value="Cancel" onClick = "window.location='./index.php';"/>
-	</form>
+	<table style="vertical-align: bottom; margin-left: auto; margin-right: auto;">
+		<tr>
+			<th><a href="reviewApplicationPg.php"><button>Review Student Applications</button></a><br></th>
+		</tr><br>
+	</table>
+
 </body>
 </html>
-
