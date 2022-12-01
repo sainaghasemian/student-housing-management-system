@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION['Submit']))
+{
+	header("Location:./studentlogin.php")
+}
+?>
 <html>
 <style type="text/css">
 	body{

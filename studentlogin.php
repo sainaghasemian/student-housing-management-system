@@ -28,10 +28,10 @@
 </header>
 
 <body>
-	<form action="stafflogin.php" method="post">
+	<form action="student-login.php" method="post">
    Student ID: <input type="text" name="studentID" required><br><br>
    Password: <input type="password" name="Password" required><br><br>
-   <input type="submit" value="Submit" onClick = "window.location='./studentloginpg.php';"/>
+   <input type="submit" value="Submit" />
    <input type="button" name = "Cancel" value="Cancel" onClick = "window.location='./index.php';"/>
 </form>
 

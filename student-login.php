@@ -1,27 +1,30 @@
 <?php
-include './databaseConnect.php'
+include './databaseConnect.php';
+
 
 session_start();
 $con=OpenCon();
-if(mysqli_connect_errno($con))
-{
-    echo "Failed connection to: " .mysqli_connect_error();
-}
+if (mysqli_connect_errno($con))
+  {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
 
-$ID = $_POST['studentID'];
+
+$user_ID = $_POST['studentID'];
 $password = $_POST['Password'];
-$sql = "SELECT * FROM STUDENTS AS S WHERE S.ID = '$ID' AND S.Password = '$password'";
+$sql = "SELECT * FROM STUDENTS AS S WHERE S.ID = '$user_ID' AND S.Password = '$password'";
 $result = mysqli_query($con, $sql);
 
 if(mysqli_num_rows($result) == 1)
 {
     $_SESSION["studentID"] = $ID;
+    $_SESSION["Password"] = $password;
     $_SESSION['Submit'] = 'true';
-    header("Location: studentloginpg.php");
+        header("Location: studentloginpg.php");
 
 }
 else{
-    header("Location: studentlogin.php");
+    header("Location: index.php");
 }
 
 mysqli_close($con);
