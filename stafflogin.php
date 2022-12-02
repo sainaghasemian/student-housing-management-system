@@ -30,8 +30,8 @@
 	<form action="staff-login.php" method="post">
 	Employee ID: <input type="text" name="employeeID" required><br><br>
 	Password: <input type="password" name="Password" required><br><br>
-	<input type="submit" value = "Login As Mental Health Advisor" /> 
-	<input type="submit" value = "Login As Administrator" />
+	<input type="submit" name="mhadvisor" value = "Login As Mental Health Advisor" /> 
+	<input type="submit" name="admin" value = "Login As Administrator" />
 	<input type="button" name = "Cancel" value="Cancel" onClick = "window.location='./index.php';"/>
 	</form>
 </body>
