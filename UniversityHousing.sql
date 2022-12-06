@@ -100,7 +100,8 @@ DROP TABLE IF EXISTS `Parking Spots`;
 CREATE TABLE `Parking Spots` (
   `Spot_Number` INT NOT NULL,
   `Lot_Number` INT NOT NULL,
-  PRIMARY KEY (`Spot_Number`, `Lot_Number`)
+  PRIMARY KEY (`Spot_Number`)
+  FOREIGN KEY ('Lot_Number') REFERENCES 'Parking Lots' ('LotNumber')
 );
 
 DROP TABLE IF EXISTS `Parks In`;
