@@ -138,7 +138,8 @@ CREATE TABLE `Rooms` (
   `Rent_per_Sem` INT NOT NULL,
   `#bathrooms` INT NOT NULL,
   `#bedrooms` INT NOT NULL,
-  PRIMARY KEY (`Room#`, `Building_Name`)
+  PRIMARY KEY (`Room#`)
+  FOREIGN KEY ('Building_Name') REFERENCES 'Buildings' ('Building_Name')
 );
 
 DROP TABLE IF EXISTS `Lives In`;
