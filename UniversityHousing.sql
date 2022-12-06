@@ -109,7 +109,9 @@ CREATE TABLE `Parks In` (
   `Spot_Number` INT NOT NULL,
   `Lot_Number` INT NOT NULL,
   `StudentID` VARCHAR(8) NOT NULL,
-  PRIMARY KEY (`Spot_Number`, `Lot_Number`, `StudentID`)
+  FOREIGN KEY ('Spot_Number') REFERENCES 'Parking Spots' ('Spot_Number')
+  FOREIGN KEY ('Lot_Number') REFERENCES 'Parking Lots' ('LotNumber')
+  FOREIGN KEY ('StudentID') REFERENCES 'Applications' ('StudentID')
 );
 
 DROP TABLE IF EXISTS `Buildings`;
