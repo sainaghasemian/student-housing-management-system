@@ -100,8 +100,8 @@ DROP TABLE IF EXISTS `Parking Spots`;
 CREATE TABLE `Parking Spots` (
   `Spot_Number` INT NOT NULL,
   `Lot_Number` INT NOT NULL,
-  PRIMARY KEY (`Spot_Number`)
-  FOREIGN KEY ('Lot_Number') REFERENCES 'Parking Lots' ('LotNumber')
+  PRIMARY KEY (`Spot_Number`, `Lot_Number`),
+  FOREIGN KEY (`Lot_Number`) REFERENCES `Parking Lots` (`LotNumber`)
 );
 
 DROP TABLE IF EXISTS `Parks In`;
@@ -109,9 +109,9 @@ CREATE TABLE `Parks In` (
   `Spot_Number` INT NOT NULL,
   `Lot_Number` INT NOT NULL,
   `StudentID` VARCHAR(8) NOT NULL,
-  FOREIGN KEY ('Spot_Number') REFERENCES 'Parking Spots' ('Spot_Number')
-  FOREIGN KEY ('Lot_Number') REFERENCES 'Parking Lots' ('LotNumber')
-  FOREIGN KEY ('StudentID') REFERENCES 'Applications' ('StudentID')
+  FOREIGN KEY (`Spot_Number`) REFERENCES `Parking Spots` (`Spot_Number`),
+  FOREIGN KEY (`Lot_Number`) REFERENCES `Parking Lots` (`LotNumber`),
+  FOREIGN KEY (`StudentID`) REFERENCES `Applications` (`StudentID`)
 );
 
 DROP TABLE IF EXISTS `Buildings`;
@@ -138,8 +138,8 @@ CREATE TABLE `Rooms` (
   `Rent_per_Sem` INT NOT NULL,
   `#bathrooms` INT NOT NULL,
   `#bedrooms` INT NOT NULL,
-  PRIMARY KEY (`Room#`)
-  FOREIGN KEY ('Building_Name') REFERENCES 'Buildings' ('Building_Name')
+  PRIMARY KEY (`Room#`, `Building_Name`),
+  FOREIGN KEY (`Building_Name`) REFERENCES `Buildings` (`Building_Name`)
 );
 
 DROP TABLE IF EXISTS `Lives In`;
