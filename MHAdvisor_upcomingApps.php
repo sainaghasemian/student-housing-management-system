@@ -6,8 +6,7 @@ if ($conn->connect_error) {
 }
 
 $employee_ID = $_SESSION['employeeID'];
-
-$result = mysqli_query($conn,"SELECT * FROM APPOINTMENTS AS A WHERE A.student_ID IS NULL");
+$result = mysqli_query($conn,"SELECT * FROM APPOINTMENTS AS A WHERE A.student_ID");
 echo "<table border= '1'>
 <tr> 
 <th> Advisor Id</th>
@@ -35,3 +34,5 @@ echo"</table>";
 mysqli_close($conn);
     
 ?>
+<a href="MHAdvisor_loginpg.php">Back</a>
+<a href="logoutpg.php">Logout</a>

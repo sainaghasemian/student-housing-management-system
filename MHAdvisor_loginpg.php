@@ -43,5 +43,6 @@
 	</table>
 
 </body>
+<a href="logoutpg.php">Logout</a>
 </html>
 

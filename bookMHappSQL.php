@@ -25,8 +25,8 @@ mysqli_query($conn, "DELETE FROM APPOINTMENTS WHERE Appointment_ID = '$appointme
 
 mysqli_query($conn, "INSERT INTO `Appointments` (`Advisor_ID`,`Appointment_ID`, `Date`, `Time`, `Student_ID`) 
 VALUES ('$advisorID', '$appointmentID', '$date', '$time', '$user_ID')");
-
+echo "Your appointment has been confirmed. ";
 mysqli_close($conn);
 
-header("Location: appointmentsMainPg.php");
 ?>
+<a href="appointmentsMainPg.php">Return to view/book appointments page</a>

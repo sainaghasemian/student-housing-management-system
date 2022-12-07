@@ -34,7 +34,7 @@
 	<table style="vertical-align: bottom; margin-left: auto; margin-right: auto;">
     <tr>
 			<th><a href="bookMHapp.php"><button>Book A Mental Health Appointment</button></a><br></th>
-			<th><a href="viewMHapp.php"><button>View Details Of Upcoming Appointment With Designated Mental Health Advisor</button></a><br></th>
+			<th><a href="viewMHapp.php"><button>View Details Of Upcoming Appointments With Designated Mental Health Advisor</button></a><br></th>
 		</tr><br>
 	</table>
 </body>
