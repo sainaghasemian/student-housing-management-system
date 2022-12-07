@@ -18,20 +18,13 @@ $country = $_POST["country"];
 $street = $_POST["streetName"];
 $user = $_SESSION['studentID'];
 
-echo $fName;
-echo $mInit;
-echo $lName;
-echo $YOS;
-echo $postalCode;
-echo $city;
-echo $province;
-echo $country;
-echo $street;
-echo $user;
+mysqli_query($conn,"DELETE FROM APPLICATIONS WHERE StudentID = '$user'");
 
-$result = mysqli_query($conn,"SELECT * FROM APPOINTMENTS AS A WHERE A.Student_ID IS NULL");
+mysqli_query($conn, "INSERT INTO `Applications` (`StudentID`, `Year_of_Study`, `Postal_Code`, `Province`, `Country`, `StreetName`, `City`, `Fname`, `Minit`, `Lname`, `Status`) 
+VALUES ('$user', '$YOS', '$postalCode', '$province', '$country', '$street', '$city', '$fName', '$mInit', '$lName', 'Submitted Pending Approval')");
+  
+header("Location: viewHousingApps.php");
 
-    
 mysqli_close($conn);
     
 ?>
