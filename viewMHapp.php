@@ -5,7 +5,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$result = mysqli_query($conn,"SELECT * FROM APPOINTMENTS");
+$result = mysqli_query($conn,"SELECT * FROM APPOINTMENTS AS A WHERE A.Student_ID IS NULL");
 echo "<table border= '1'>
 <tr> 
 <th> Advisor Id</th>
@@ -18,11 +18,11 @@ echo "<table border= '1'>
 while($row = mysqli_fetch_array($result)) 
 {
     echo "<tr>";
-    echo "<td>" . $row['Advisor_ID'] "</td>";
-    echo "<td>" . $row['Appointment_ID'] "</td>";
-    echo "<td>" . $row['Date'] "</td>";
-    echo "<td>" . $row['Time'] "</td>";
-    echo "<td>" . $row['Student_ID'] "</td>";
+    echo "<td>" . $row[0] . "</td>";
+    echo "<td>" . $row[1] . "</td>";
+    echo "<td>" . $row[2] . "</td>";
+    echo "<td>" . $row[3] . "</td>";
+    echo "<td>" . $row[4] . "</td>";
     echo "</tr>";
             
 }
