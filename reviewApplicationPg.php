@@ -42,8 +42,12 @@
         die("Connection failed: " . $conn->connect_error);
     }
     
-    //$user_ID = $_SESSION["studentID"];
-    $result = mysqli_query($conn,"SELECT * FROM APPLICATIONS");
+    $result = mysqli_query($conn,"SELECT * FROM APPLICATIONS WHERE Status = 'Submitted Pending Approval'");
+    
+    if (mysqli_num_rows($result) == 0){
+        header("Location: noApplications.php");
+    }
+    
     echo "<table border= '1'>
     <tr> 
     <th> Student Id</th>
@@ -59,23 +63,23 @@
     <th> Status</th>
     </tr>";
 
-    while($row = mysqli_fetch_array($result)) 
-    {
-        echo "<tr>";
-        echo "<td>" . $row[0] . "</td>";
-        echo "<td>" . $row[1] . "</td>";
-        echo "<td>" . $row[2] . "</td>";
-        echo "<td>" . $row[3] . "</td>";
-        echo "<td>" . $row[4] . "</td>";
-        echo "<td>" . $row[5] . "</td>";
-        echo "<td>" . $row[6] . "</td>";
-        echo "<td>" . $row[7] . "</td>";
-        echo "<td>" . $row[8] . "</td>";
-        echo "<td>" . $row[9] . "</td>";
-        echo "<td>" . $row[10] . "</td>";
-        echo "</tr>";
-                
-    }
+    $row = mysqli_fetch_array($result);
+
+    $_SESSION['studentID'] = $row[0];
+
+    echo "<tr>";
+    echo "<td>" . $row[0] . "</td>";
+    echo "<td>" . $row[1] . "</td>";
+    echo "<td>" . $row[2] . "</td>";
+    echo "<td>" . $row[3] . "</td>";
+    echo "<td>" . $row[4] . "</td>";
+    echo "<td>" . $row[5] . "</td>";
+    echo "<td>" . $row[6] . "</td>";
+    echo "<td>" . $row[7] . "</td>";
+    echo "<td>" . $row[8] . "</td>";
+    echo "<td>" . $row[9] . "</td>";
+    echo "<td>" . $row[10] . "</td>";
+    echo "</tr>";
 
     echo"</table>";
 
@@ -84,9 +88,11 @@
         
     ?>
 
-    
-<body>        
-
+    <h2>Enter "A" or "D" in the text box below to accept or decline the application, respectively.<h2>
+    <form action="changeAppStatus.php" method="post">
+    Accept/Decline: <input type="text" name="status" required><br><br>
+    <input type="submit" value="Submit" />
+<body>
 <br>
 <a href="adminloginpg.php">Back</a>
 <a href="logoutpg.php">Logout</a>
