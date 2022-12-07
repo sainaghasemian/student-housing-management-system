@@ -38,7 +38,7 @@
 <body>        
 
 <form action="MHAdvisor_addAvailablitySQL.php" method="post">
-    Date: <input type="text" name="Date" min="7/12/2022" required><br>
+    Date: <input type="text" name="Date" required><br>
     Time: <input type="text" name="Time" required><br>
     <input type="submit" value="Enter New Availablity">
 </form>
