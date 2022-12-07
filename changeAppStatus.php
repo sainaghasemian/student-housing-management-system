@@ -46,7 +46,7 @@ if ($status == "A"){
     $result = mysqli_query($conn, "SELECT * FROM `Parking Spots`");
     while (true){
         $row = mysqli_fetch_array($result);
-        $result2 = mysqli_query($conn, "SELECT * FROM `Parks In` AS PI, `Parking Lots` AS PL WHERE PI.Spot_Number = '$row[0]' AND PI.Lot_Number = '$row[1]' AND PI.Lot_Number = PL.LotNumber AND PL.Building_Name = '$building'");
+        $result2 = mysqli_query($conn, "SELECT * FROM `Parks In` AS PI, `Parking Lots` AS PL WHERE PI.Spot_Number = '$row[0]' AND PI.Lot_Number = '$row[1]' AND PI.Lot_Number = PL.LotNumber AND PL.Building_Name = '$building' AND PI.Spot_Number != '$row[0]' AND PI.Lot_Number != '$row[1]'");
         if (mysqli_num_rows($result2) == 0){
             mysqli_query($conn, "INSERT INTO `Parks In` (`Spot_Number`, `Lot_Number`, `StudentID`) VALUES ('$row[0]', '$row[1]', '$user')");
             break;

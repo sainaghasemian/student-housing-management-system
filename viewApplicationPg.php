@@ -59,26 +59,50 @@
     <th> Status</th>
     </tr>";
 
-    while($row = mysqli_fetch_array($result)) 
-    {
-        echo "<tr>";
-        echo "<td>" . $row[0] . "</td>";
-        echo "<td>" . $row[1] . "</td>";
-        echo "<td>" . $row[2] . "</td>";
-        echo "<td>" . $row[3] . "</td>";
-        echo "<td>" . $row[4] . "</td>";
-        echo "<td>" . $row[5] . "</td>";
-        echo "<td>" . $row[6] . "</td>";
-        echo "<td>" . $row[7] . "</td>";
-        echo "<td>" . $row[8] . "</td>";
-        echo "<td>" . $row[9] . "</td>";
-        echo "<td>" . $row[10] . "</td>";
-        echo "</tr>";
-                
-    }
+    $row = mysqli_fetch_array($result);
+
+    echo "<tr>";
+    echo "<td>" . $row[0] . "</td>";
+    echo "<td>" . $row[1] . "</td>";
+    echo "<td>" . $row[2] . "</td>";
+    echo "<td>" . $row[3] . "</td>";
+    echo "<td>" . $row[4] . "</td>";
+    echo "<td>" . $row[5] . "</td>";
+    echo "<td>" . $row[6] . "</td>";
+    echo "<td>" . $row[7] . "</td>";
+    echo "<td>" . $row[8] . "</td>";
+    echo "<td>" . $row[9] . "</td>";
+    echo "<td>" . $row[10] . "</td>";
+    echo "</tr>";
 
     echo"</table>";
 
+    $approved = "Approved";
+
+    if ($row[10] == $approved){
+        $result = mysqli_query($conn, "SELECT * FROM `Lives In` WHERE StudentID = '$user_ID'");
+        $row1 = mysqli_fetch_array($result);
+        $result = mysqli_query($conn, "SELECT * FROM ROOMS WHERE `Room#` = '$row1[1]' AND Building_Name = '$row1[2]'");
+        $row1 = mysqli_fetch_array($result); 
+        echo "Room #: ";
+        echo $row1[0];
+        echo " --- Building Name: ";
+        echo $row1[1];
+        echo " --- Rent Per Semester: $";
+        echo $row1[2];
+        echo " --- Number of Bathrooms: ";
+        echo $row1[3];
+
+        $result = mysqli_query($conn, "SELECT * FROM `Parks In` WHERE StudentID = '$user_ID'");
+        $row1 = mysqli_fetch_array($result);
+        $result = mysqli_query($conn, "SELECT * FROM `Parking Spots` WHERE Spot_Number = '$row1[0]' AND Lot_Number = '$row1[1]'");
+        $row1 = mysqli_fetch_array($result); 
+
+        echo " --- Parking Spot Number: ";
+        echo $row1[0];
+        echo " --- Parking Lot: ";
+        echo $row1[1];
+    }
         
     mysqli_close($conn);
         

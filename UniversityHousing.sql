@@ -210,14 +210,14 @@ INSERT INTO `Building Amenities` (`Building_Name`, `Amenity_Name`) VALUES ('Casc
 INSERT INTO `Building Amenities` (`Building_Name`, `Amenity_Name`) VALUES ('Cascade Hall', 'Coffee Bar');
 INSERT INTO `Building Amenities` (`Building_Name`, `Amenity_Name`) VALUES ('Cascade Hall', 'Bike Locking System');
 
-INSERT INTO `Rooms` (`Room#`, `Building_Name`, `Rent_per_sem`, `#bathrooms`, `#bedrooms`) VALUES ('100', 'Cascade Hall', '9015', '2', '2');
-INSERT INTO `Rooms` (`Room#`, `Building_Name`, `Rent_per_sem`, `#bathrooms`, `#bedrooms`) VALUES ('101', 'Glacier Hall', '10000', '1', '1');
-INSERT INTO `Rooms` (`Room#`, `Building_Name`, `Rent_per_sem`, `#bathrooms`, `#bedrooms`) VALUES ('103', 'Cascade Hall', '10000', '1', '1');
-INSERT INTO `Rooms` (`Room#`, `Building_Name`, `Rent_per_sem`, `#bathrooms`, `#bedrooms`) VALUES ('100', 'Glacier Hall', '9015', '2', '2');
+INSERT INTO `Rooms` (`Room#`, `Building_Name`, `Rent_per_sem`, `#bathrooms`, `#bedrooms`) VALUES ('101', 'Cascade Hall', '9015', '2', '2');
+INSERT INTO `Rooms` (`Room#`, `Building_Name`, `Rent_per_sem`, `#bathrooms`, `#bedrooms`) VALUES ('100', 'Glacier Hall', '10000', '1', '1');
+INSERT INTO `Rooms` (`Room#`, `Building_Name`, `Rent_per_sem`, `#bathrooms`, `#bedrooms`) VALUES ('100', 'Cascade Hall', '9980', '1', '1');
+INSERT INTO `Rooms` (`Room#`, `Building_Name`, `Rent_per_sem`, `#bathrooms`, `#bedrooms`) VALUES ('102', 'Glacier Hall', '9015', '2', '2');
 INSERT INTO `Rooms` (`Room#`, `Building_Name`, `Rent_per_sem`, `#bathrooms`, `#bedrooms`) VALUES ('103', 'Glacier Hall', '8575', '2', '4');
 INSERT INTO `Rooms` (`Room#`, `Building_Name`, `Rent_per_sem`, `#bathrooms`, `#bedrooms`) VALUES ('104', 'Glacier Hall', '8700', '1', '2');
-INSERT INTO `Rooms` (`Room#`, `Building_Name`, `Rent_per_sem`, `#bathrooms`, `#bedrooms`) VALUES ('101', 'Cascade Hall', '8575', '2', '4');
-INSERT INTO `Rooms` (`Room#`, `Building_Name`, `Rent_per_sem`, `#bathrooms`, `#bedrooms`) VALUES ('102', 'Cascade Hall', '8700', '1', '2');
+INSERT INTO `Rooms` (`Room#`, `Building_Name`, `Rent_per_sem`, `#bathrooms`, `#bedrooms`) VALUES ('102', 'Cascade Hall', '8575', '2', '4');
+INSERT INTO `Rooms` (`Room#`, `Building_Name`, `Rent_per_sem`, `#bathrooms`, `#bedrooms`) VALUES ('103', 'Cascade Hall', '8700', '1', '2');
 
 
 UNLOCK TABLES;
