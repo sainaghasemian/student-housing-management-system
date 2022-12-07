@@ -171,7 +171,7 @@ INSERT INTO `Mental Health Advisors` (`EmployeeID`, `Password`, `StreetName`, `C
 VALUES ('00013084', 'checkers2022', 'Banff Trail', 'Calgary', 'AB', 't0b9d6', 'Jerome', 'McGrovven', 'Cascade Hall');
 
 INSERT INTO `Appointments` (`Advisor_ID`, `Date`, `Time`) VALUES ('77733322', '2022-12-15', '10:00AM');
-INSERT INTO `Appointments` (`Advisor_ID`, `Date`, `Time`) VALUES ('77733322', '15/12/2022', '12:00PM - 1:00PM');
+INSERT INTO `Appointments` (`Advisor_ID`, `Date`, `Time`) VALUES ('77733322', '2022-12-15', '12:00PM');
 INSERT INTO `Appointments` (`Advisor_ID`, `Date`, `Time`) VALUES ('77733322', '16/12/2022', '9:00AM - 10:00AM');
 INSERT INTO `Appointments` (`Advisor_ID`, `Date`, `Time`) VALUES ('77733322', '16/12/2022', '10:00AM - 11:00AM');
 INSERT INTO `Appointments` (`Advisor_ID`, `Date`, `Time`) VALUES ('00013084', '17/12/2022', '2:00PM - 3:00PM');
