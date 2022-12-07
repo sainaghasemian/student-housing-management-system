@@ -38,7 +38,7 @@
 	<table style="vertical-align: bottom; margin-left: auto; margin-right: auto;">
 		<tr>
 			<th><a href="MHAdvisor_upcomingApps.php"><button>View Upcoming Appointments </button></a><br></th>
-            <th><a href="MHAdvisor_addAvailablity.php"><button>Add New Availability For Appointments</button></a><br></th>
+            <th><a href="MHAdvisor_addAvailability.php"><button>Add New Availability For Appointments</button></a><br></th>
 		</tr><br>
 	</table>
 

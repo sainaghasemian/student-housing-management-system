@@ -34,10 +34,10 @@
 <body>
     <h2>Add New Availability Of Appointments For Students To Book In<h2>
     <h3>Enter The Date[DD/MM/YYYY] And Time[00:00AM/PM - 00:00AM/PM] You Wish To Open Availability<h3> 
-    
+    <h4>If you return to this page after attempting to click "Enter New Availability", then you have already opened availability for that date and time. Please attempt to add a different availability.<h4>
 <body>        
 
-<form action="MHAdvisor_addAvailablitySQL.php" method="post">
+<form action="MHAdvisor_addAvailabilitySQL.php" method="post">
     Date: <input type="text" name="Date" required><br>
     Time: <input type="text" name="Time" required><br>
     <input type="submit" value="Enter New Availablity">

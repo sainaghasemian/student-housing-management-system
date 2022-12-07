@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <html>
 <style type="text/css">
 	body{

@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 include 'databaseConnect.php';
 
 if ($conn->connect_error) {
@@ -14,7 +17,7 @@ if (isset($_POST['admin'])) {
 
     if(mysqli_num_rows($result) == 1)
     {
-        $_SESSION["emloyeeID"] = $employee_ID;
+        $_SESSION['employeeID'] = $employee_ID;
         $_SESSION["Password"] = $password;
         $_SESSION['Login As Administrator'] = 'true';
         header("Location: adminloginpg.php");
@@ -31,7 +34,7 @@ else if (isset($_POST['mhadvisor'])) {
 
     if(mysqli_num_rows($result) == 1)
     {
-        $_SESSION["emloyeeID"] = $employee_ID;
+        $_SESSION['employeeID'] = $employee_ID;
         $_SESSION["Password"] = $password;
         $_SESSION['Login As Mental Health Advisor'] = 'true';
         header("Location: MHAdvisor_loginpg.php");
