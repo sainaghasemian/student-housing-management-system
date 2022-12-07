@@ -28,11 +28,12 @@
     }
 </style>
 <header>
-    <h1>Book A New Mental Health Appointment</h1>
+    <h1>Add Availability Page</h1>
 </header>
 
 <body>
-    <h2>Choose From One Of The Following Appointments By Entering The Corresponding Appointment ID<h2>
+    <h2>Add New Availability Of Appointments For Students To Book In<h2>
+    <h3>Enter The Date[DD/MM/YYYY] And Time[00:00AM/PM - 00:00AM/PM] You Wish To Open Availability<h3> 
     
     <?php
     include 'databaseConnect.php';
@@ -48,6 +49,7 @@
     <th> Appointment ID</th>
     <th> Date</th>
     <th> Time</th>
+    <th> Student ID</th>
     </tr>";
 
     while($row = mysqli_fetch_array($result)) 
@@ -57,6 +59,7 @@
         echo "<td>" . $row[1] . "</td>";
         echo "<td>" . $row[2] . "</td>";
         echo "<td>" . $row[3] . "</td>";
+        echo "<td>" . $row[4] . "</td>";
         echo "</tr>";
                 
     }
@@ -71,12 +74,13 @@
     
 <body>        
 
-<form action="bookMHappSQL.php" method="post">
-    Appointment ID: <input type="number" name="appointmentID" required><br>
-    <input type="submit" value="Book This Appointment">
+<form action="MHAdvisor_addAvailablitySQL.php" method="post">
+    Date: <input type="text" name="Date" min="7/12/2022" required><br>
+    Time: <input type="text" name="Time" required><br>
+    <input type="submit" value="Enter New Availablity">
 </form>
 <br>
-<a href="appointmentsMainPg.php">Back</a>
+<a href="MHAdvisor_loginpg.php">Back</a>
 <a href="logoutpg.php">Logout</a>
 <br>
 <html>
