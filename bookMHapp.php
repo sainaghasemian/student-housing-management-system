@@ -1,15 +1,7 @@
-<?php
-include 'databaseConnect.php';
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-?>
 <html>
 <style type="text/css">
     body{
-        text-align: center;
+        text-align: left;
         padding-bottom: 100px;
         background: #F6F3E7;
         padding-top: 120px;
@@ -39,18 +31,52 @@ if ($conn->connect_error) {
     <h1>Book A New Mental Health Appointment</h1>
 </header>
 
+<body>
+    <h2>Choose From One Of The Following Appointments By Entering The Corresponding Appointment ID<h2>
+    
+    <?php
+    include 'databaseConnect.php';
+
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $result = mysqli_query($conn,"SELECT * FROM APPOINTMENTS AS A WHERE A.Student_ID IS NULL");
+    echo "<table border= '1'>
+    <tr> 
+    <th> Advisor Id</th>
+    <th> Appointment ID</th>
+    <th> Date</th>
+    <th> Time</th>
+    </tr>";
+
+    while($row = mysqli_fetch_array($result)) 
+    {
+        echo "<tr>";
+        echo "<td>" . $row[0] . "</td>";
+        echo "<td>" . $row[1] . "</td>";
+        echo "<td>" . $row[2] . "</td>";
+        echo "<td>" . $row[3] . "</td>";
+        echo "</tr>";
+                
+    }
+
+    echo"</table>";
+
+        
+    mysqli_close($conn);
+        
+    ?>
+
+    
 <body>        
+
 <form action="bookMHappSQL.php" method="post">
-    Advisor ID: <input type="number" name="advisorID" required><br>
     Appointment ID: <input type="number" name="appointmentID" required><br>
-    Date: <input type="date" name="Date" required><br>
-    Time: <input type="time" name="Time" min="9:00AM" max="4:00PM" required><br>
     <input type="submit" value="Book This Appointment">
 </form>
 <br>
 <a href="appointmentsMainPg.php">Back</a>
+<a href="logoutpg.php">Logout</a>
 <br>
-</html>
-
-
-
+<html>

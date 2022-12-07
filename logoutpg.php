@@ -23,4 +23,4 @@
 
 <?php
 echo 'Thank you for logging out.';
-echo '<a href="index.php"> You will now return to the main page.</a>';
+echo '<a href="index.php"> Press here to return to the main page.</a>';

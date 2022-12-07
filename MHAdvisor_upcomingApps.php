@@ -5,9 +5,9 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$user_ID = $_SESSION['studentID'];
+$employee_ID = $_SESSION['employeeID'];
 
-$result = mysqli_query($conn,"SELECT * FROM APPOINTMENTS AS A WHERE A.Student_ID");
+$result = mysqli_query($conn,"SELECT * FROM APPOINTMENTS AS A WHERE A.student_ID IS NULL");
 echo "<table border= '1'>
 <tr> 
 <th> Advisor Id</th>
@@ -35,5 +35,3 @@ echo"</table>";
 mysqli_close($conn);
     
 ?>
-<a href="appointmentsMainPg.php">Back</a>
-<a href="logoutpg.php">Logout</a>
