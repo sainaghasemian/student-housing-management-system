@@ -50,7 +50,7 @@ if ($conn->connect_error) {
 <br>
 <a href="appointmentsMainPg.php">Back</a>
 <br>
-<html>
+</html>
 
 
 
