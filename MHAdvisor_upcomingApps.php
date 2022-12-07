@@ -1,12 +1,15 @@
 <?php
+
+session_start();
+
 include 'databaseConnect.php';
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$employee_ID = $_SESSION['employeeID'];
-$result = mysqli_query($conn,"SELECT * FROM APPOINTMENTS AS A WHERE A.student_ID");
+$advisorID = $_SESSION['employeeID'];
+$result = mysqli_query($conn,"SELECT * FROM APPOINTMENTS AS A WHERE A.Advisor_ID = '$advisorID' AND A.Student_ID IS NOT NULL");
 echo "<table border= '1'>
 <tr> 
 <th> Advisor Id</th>
