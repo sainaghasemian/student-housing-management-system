@@ -11,6 +11,11 @@ $date = $_POST["Date"];
 $time = $_POST["Time"];
 $user_ID = $_SESSION['studentID'];
 
+echo $advisor_ID;
+echo $appointmentID;
+echo $date;
+echo $time;
+
 $result = mysqli_query($conn, "SELECT * FROM APPOINTMENTS AS A WHERE A.Time = '$time' AND A.Appointment_ID='$appointmentID' AND A.Date='$Date' AND A.Advisor_ID='$advisorID'");
 
 if(mysqli_num_rows($result) == 1)
