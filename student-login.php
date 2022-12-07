@@ -5,7 +5,6 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
   
-
 $user_ID = $_POST['studentID'];
 $password = $_POST['Password'];
 $sql = "SELECT * FROM STUDENTS AS S WHERE S.ID = '$user_ID' AND S.Password = '$password'";

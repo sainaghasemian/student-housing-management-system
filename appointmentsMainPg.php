@@ -5,6 +5,8 @@
 		padding-bottom: 100px;
 		background: #F6F3E7;
 		padding-top: 120px;
+		font-size: 20px;
+		color: #755E4A;
 	}
 	header{
 		margin-top: -120;
@@ -26,16 +28,14 @@
 	}
 </style>
 <header>
-	<h1>Welcome New or Returning Student!</h1>
+	<h1>View/Book Mental Health Appointment</h1>
 </header>
-<img src="wave-hand.gif" height = "200" width = "200" style="margin: 0px 0px 30px 0px;">
 <body>
 	<table style="vertical-align: bottom; margin-left: auto; margin-right: auto;">
-		<tr>
-			<th><a href="viewHousingApps.php"><button>Housing Applications</button></a><br></th>
-			<th><a href="appointmentsMainPg.php"><button>View/Book Mental Health Appointment</button></a><br></th>
+    <tr>
+			<th><a href="bookMHapp.php"><button>Book A Mental Health Appointment</button></a><br></th>
+			<th><a href="viewMHapp.php"><button>View Details Of Upcoming Appointment With Designated Mental Health Advisor</button></a><br></th>
 		</tr><br>
 	</table>
-
 </body>
 </html>
