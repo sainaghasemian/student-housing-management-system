@@ -35,43 +35,6 @@
     <h2>Add New Availability Of Appointments For Students To Book In<h2>
     <h3>Enter The Date[DD/MM/YYYY] And Time[00:00AM/PM - 00:00AM/PM] You Wish To Open Availability<h3> 
     
-    <?php
-    include 'databaseConnect.php';
-
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    $result = mysqli_query($conn,"SELECT * FROM APPOINTMENTS AS A WHERE A.Student_ID IS NULL");
-    echo "<table border= '1'>
-    <tr> 
-    <th> Advisor Id</th>
-    <th> Appointment ID</th>
-    <th> Date</th>
-    <th> Time</th>
-    <th> Student ID</th>
-    </tr>";
-
-    while($row = mysqli_fetch_array($result)) 
-    {
-        echo "<tr>";
-        echo "<td>" . $row[0] . "</td>";
-        echo "<td>" . $row[1] . "</td>";
-        echo "<td>" . $row[2] . "</td>";
-        echo "<td>" . $row[3] . "</td>";
-        echo "<td>" . $row[4] . "</td>";
-        echo "</tr>";
-                
-    }
-
-    echo"</table>";
-
-        
-    mysqli_close($conn);
-        
-    ?>
-
-    
 <body>        
 
 <form action="MHAdvisor_addAvailablitySQL.php" method="post">

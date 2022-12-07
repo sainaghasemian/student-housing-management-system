@@ -35,3 +35,5 @@ echo"</table>";
 mysqli_close($conn);
     
 ?>
+<a href="appointmentsMainPg.php">Back</a>
+<a href="logoutpg.php">Logout</a>
