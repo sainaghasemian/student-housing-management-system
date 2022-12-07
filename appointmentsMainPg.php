@@ -38,5 +38,6 @@
 		</tr><br>
 	</table>
 </body>
+<a href="studentloginpg.php">Back</a>
 <a href="logoutpg.php">Logout</a>
 </html>
