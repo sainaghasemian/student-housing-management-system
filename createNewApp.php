@@ -31,12 +31,16 @@
 </header>
 <body>
     <h2> New Student Housing Application <h2>
-    <form action="createNewApp.php" method="post">
-	Name: <input type="text" name="fandLName" required><br><br>
+    <form action="insertNewApp.php" method="post">
+	First name: <input type="text" name="fName" required><br><br>
+	Middle initial: <input type="text" name="mInit" required><br><br>
+	Last name: <input type="text" name="lName" required><br><br>
    	Year of Study: <input type="text" name="yearID" required><br><br>
-    Postal Code: <input type="password" name="postalCode" required><br><br>
-    Province: <input type="password" name="provinceID" required><br><br>
-    Address: <input type="password" name="addressID" required><br><br>
+    Postal Code: <input type="text" name="postalCode" required><br><br>
+	City: <input type="text" name="city" required><br><br>
+    Province: <input type="text" name="provinceID" required><br><br>
+	Country: <input type="text" name="country" required><br><br>
+    Street name: <input type="text" name="streetName" required><br><br>
    <input type="submit" value="Submit" />
    <input type="button" name = "Cancel" value="Cancel" onClick = "window.location='./viewHousingApps.php';"/>
 	
