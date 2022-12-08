@@ -30,7 +30,7 @@ $building;
 
 if ($status == "A"){
     mysqli_query($conn, "INSERT INTO `Applications` (`StudentID`, `Year_of_Study`, `Postal_Code`, `Province`, `Country`, `StreetName`, `City`, `Fname`, `Minit`, `Lname`, `Status`) 
-    VALUES ('$user', '$YOS', '$postalCode', '$province', '$country', '$street', '$city', '$fName', '$mInit', '$lName', 'Approved')");
+    VALUES ('$user', '$YOS', '$postalCode', '$province', '$country', '$streetName', '$city', '$fName', '$mInit', '$lName', 'Approved')");
     
     $result = mysqli_query($conn, "SELECT * FROM ROOMS");
     while (true){
@@ -55,7 +55,7 @@ if ($status == "A"){
 }
 else{
     mysqli_query($conn, "INSERT INTO `Applications` (`StudentID`, `Year_of_Study`, `Postal_Code`, `Province`, `Country`, `StreetName`, `City`, `Fname`, `Minit`, `Lname`, `Status`) 
-    VALUES ('$user', '$YOS', '$postalCode', '$province', '$country', '$street', '$city', '$fName', '$mInit', '$lName', 'Declined')");
+    VALUES ('$user', '$YOS', '$postalCode', '$province', '$country', '$streetName', '$city', '$fName', '$mInit', '$lName', 'Declined')");
 }
 
 header("Location: adminloginpg.php");
